@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Criar conta | Vest Shop</title>
+
+    <link rel="stylesheet" href="/css/cadastro.css">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="register-card">
+
+            <!-- LOGO -->
+
+            <div class="brand">
+                <span>VEST SHOP</span>
+            </div>
+
+
+            <!-- CABEÇALHO -->
+
+            <header class="header">
+
+                <h1>
+                    Crie sua conta
+                </h1>
+
+                <p>
+                    Cadastre-se para começar a utilizar
+                    nossa plataforma.
+                </p>
+
+            </header>
+
+
+            <!-- FORMULÁRIO -->
+
+            <form id="registerForm">
+
+                <!-- NOME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Nome completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Digite seu nome completo"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="seuemail@email.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SENHA -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Crie uma senha"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                    >
+
+                    <small>
+                        A senha deve ter pelo menos 6 caracteres.
+                    </small>
+
+                </div>
+
+
+                <!-- CONFIRMAR SENHA -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirmar senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Digite a senha novamente"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TERMOS -->
+
+                <div class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <label for="terms">
+
+                        Li e concordo com os
+                        <a href="#">
+                            termos de uso
+                        </a>
+                        e a
+                        <a href="#">
+                            política de privacidade
+                        </a>.
+
+                    </label>
+
+                </div>
+
+
+                <!-- MENSAGEM -->
+
+                <div
+                    id="message"
+                    class="message"
+                ></div>
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    id="registerButton"
+                    class="primary-button"
+                >
+                    Criar minha conta
+                </button>
+
+            </form>
+
+
+            <!-- LOGIN -->
+
+            <div class="login-link">
+
+                <span>
+                    Já possui uma conta?
+                </span>
+
+                <a href="login.html">
+                    Entrar
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/js/cadastro.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,374 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f5f7;
+
+    color: #222;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 20px;
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.register-card {
+
+    width: 100%;
+
+    max-width: 460px;
+
+    background: #ffffff;
+
+    padding: 40px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.brand {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+.brand span {
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+.header h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+.header p {
+
+    color: #777;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+.form-group label {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+}
+
+.form-group input:focus {
+
+    border-color: #111;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 0, 0, 0.05);
+
+}
+
+.form-group small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #888;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================
+   TERMOS
+========================================== */
+
+.terms {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin: 20px 0;
+
+    font-size: 13px;
+
+    color: #666;
+
+    line-height: 1.5;
+
+}
+
+.terms input {
+
+    margin-top: 3px;
+
+    cursor: pointer;
+
+}
+
+.terms a {
+
+    color: #111;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   MENSAGEM
+========================================== */
+
+.message {
+
+    display: none;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+}
+
+.message.error {
+
+    display: block;
+
+    background: #fff0f0;
+
+    color: #b00020;
+
+}
+
+.message.success {
+
+    display: block;
+
+    background: #eefaf1;
+
+    color: #187a35;
+
+}
+
+
+/* ==========================================
+   BOTÃO
+========================================== */
+
+.primary-button {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    background: #111;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+.primary-button:hover {
+
+    background: #333;
+
+    transform: translateY(-1px);
+
+}
+
+.primary-button:disabled {
+
+    background: #999;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* ==========================================
+   LOGIN
+========================================== */
+
+.login-link {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    font-size: 14px;
+
+    color: #777;
+
+}
+
+.login-link a {
+
+    margin-left: 5px;
+
+    color: #111;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+.login-link a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 500px) {
+
+    .register-card {
+
+        padding: 30px 22px;
+
+        border-radius: 18px;
+
+    }
+
+    .header h1 {
+
+        font-size: 26px;
+
+    }
+
+}
+
