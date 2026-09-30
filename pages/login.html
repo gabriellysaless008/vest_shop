@@ -2,159 +2,71 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar | Vest Shop</title>
-
     <link rel="stylesheet" href="/css/login.css">
-
 </head>
 
 <body>
-
     <main class="container">
-
         <section class="login-card">
 
             <!-- LOGO -->
-
             <div class="brand">
                 <span>VEST SHOP</span>
             </div>
 
-
             <!-- CABEÇALHO -->
-
             <header class="header">
-
-                <h1>
-                    Bem-vindo de volta!
-                </h1>
-
-                <p>
-                    Entre na sua conta para continuar
-                    utilizando a plataforma.
-                </p>
-
+                <h1>Bem-vindo de volta!</h1>
+                <p>Entre na sua conta para continuar utilizando a plataforma.</p>
             </header>
 
-
             <!-- FORMULÁRIO -->
-
             <form id="loginForm">
 
                 <!-- E-MAIL -->
-
                 <div class="form-group">
-
-                    <label for="email">
-                        E-mail
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="seuemail@email.com"
-                        autocomplete="email"
-                        required
-                    >
-
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@email.com" autocomplete="email" required>
                 </div>
-
 
                 <!-- SENHA -->
-
                 <div class="form-group">
-
                     <div class="password-label">
-
-                        <label for="password">
-                            Senha
-                        </label>
-
-                        <a href="#">
-                            Esqueci minha senha
-                        </a>
-
+                        <label for="password">Senha</label>
+                        <a href="#">Esqueci minha senha</a>
                     </div>
 
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Digite sua senha"
-                        autocomplete="current-password"
-                        required
-                    >
-
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" autocomplete="current-password" required>
                 </div>
-
 
                 <!-- LEMBRAR DE MIM -->
-
-                <div class="remember">
-
-                    <input
-                        type="checkbox"
-                        id="remember"
-                    >
-
-                    <label for="remember">
-                        Lembrar de mim
-                    </label>
-
-                </div>
-
+                <!-- <div class="remember">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Lembrar de mim</label>
+                </div> -->
 
                 <!-- MENSAGEM -->
-
-                <div
-                    id="message"
-                    class="message"
-                ></div>
-
+                <div id="message" class="message"></div>
 
                 <!-- BOTÃO -->
-
-                <button
-                    type="submit"
-                    id="loginButton"
-                    class="primary-button"
-                >
-                    Entrar
-                </button>
+                <button type="submit" id="botao_login" class="primary-button" onclick="cadastrar(event)">Entrar</button>
 
             </form>
 
-
             <!-- CADASTRO -->
-
             <div class="register-link">
-
-                <span>
-                    Ainda não possui uma conta?
-                </span>
-
-                <a href="cadastro.html">
-                    Criar conta
-                </a>
-
+                <span>Ainda não possui uma conta?</span>
+                <a href="cadastro.html">Criar conta</a>
             </div>
 
         </section>
-
     </main>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/login.js"></script>
-
 </body>
 
 </html>

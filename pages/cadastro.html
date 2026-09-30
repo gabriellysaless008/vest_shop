@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +27,7 @@
 
                 <!-- NOME -->
                 <div class="form-group">
-                    <label for="name">Nome completo</label>
+                    <label for="nome">Nome completo</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" autocomplete="name" required>
                 </div>
 
@@ -38,35 +37,36 @@
                     <input type="email" id="email" name="email" placeholder="seuemail@email.com" autocomplete="email" required>
                 </div>
 
+                <!-- DATA DE NASCIMENTO -->
+                <div class="form-group">
+                    <label for="data_nascimento">Data de nascimento</label>
+                    <input type="text" id="data_nascimento" name="data_nascimento" placeholder="DD/MM/AAAA" maxlength="10" inputmode="numeric" autocomplete="bday" required>
+                </div>
+
                 <!-- SENHA -->
                 <div class="form-group">
-                    <label for="password">Senha</label>
+                    <label for="senha">Senha</label>
                     <input type="password" id="senha" name="senha" placeholder="Crie uma senha" autocomplete="new-password" minlength="6" required>
                     <small>A senha deve ter pelo menos 6 caracteres.</small>
                 </div>
 
                 <!-- CONFIRMAR SENHA -->
                 <div class="form-group">
-                    <label for="confirmPassword">Confirmar senha</label>
+                    <label for="confirmaSenha">Confirmar senha</label>
                     <input type="password" id="confirmaSenha" name="confirmPassword" placeholder="Digite a senha novamente" autocomplete="new-password" required>
                 </div>
 
-                <!-- TERMOS -->
-                <!--
-                <div class="terms">
-                    <input type="checkbox" id="termos" required>
-                    <label for="terms">
-                        Li e concordo com os <a href="#">termos de uso</a> e a
-                        <a href="#">política de privacidade</a>.
-                    </label>
+                <!-- PROGRAMA DE FIDELIDADE -->
+                <div class="remember">
+                    <input type="checkbox" id="participa_programa_fidelidade" name="participa_programa_fidelidade">
+                    <label for="participa_programa_fidelidade">Quero participar do programa de fidelidade</label>
                 </div>
-                -->
 
                 <!-- MENSAGEM -->
                 <div id="mensagem" class="message"></div>
 
                 <!-- BOTÃO -->
-                <button type="submit" id="botao" class="primary-button" onclick="cadastrar(event)"">
+                <button type="submit" id="botao_cadastro" class="primary-button" onclick="cadastrar(event)">
                     Criar minha conta
                 </button>
 

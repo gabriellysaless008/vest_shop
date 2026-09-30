@@ -1,14 +1,34 @@
+const dataNascimento = document.getElementById("data_nascimento");
+
+dataNascimento.addEventListener("input", function () {
+    let valor = this.value.replace(/\D/g, "");
+
+    if (valor.length > 2) {
+        valor = valor.substring(0, 2) + "/" + valor.substring(2);
+    }
+
+    if (valor.length > 5) {
+        valor = valor.substring(0, 5) + "/" + valor.substring(5, 9);
+    }
+
+    this.value = valor;
+});
+
 function pegarDados() {
     let nome = document.getElementById("nome").value;
     let email = document.getElementById("email").value;
+    let dataNascimento = document.getElementById("data_nascimento").value;
     let senha = document.getElementById("senha").value;
     let confirmaSenha = document.getElementById("confirmaSenha").value;
+    let participaProgramaFidelidade = document.getElementById("participa_programa_fidelidade").checked;
 
     let usuario = {
         nome: nome,
         email: email,
+        data_nascimento: dataNascimento,
         senha: senha,
-        confirmaSenha: confirmaSenha
+        confirmaSenha: confirmaSenha,
+        participa_programa_fidelidade: participaProgramaFidelidade
     };
 
     console.log(usuario);
@@ -16,11 +36,11 @@ function pegarDados() {
     return usuario;
 }
 
-async function cadastrar() {
+async function cadastrar(event) {
 
     event.preventDefault();
 
-    console.log('chamou o cadastrar');
+    console.log("Chamou o cadastrar");
 
     try {
         let usuario = pegarDados();
