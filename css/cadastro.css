@@ -1,6 +1,8 @@
-/* ==========================================
-   RESET
-========================================== */
+/* =========================================
+   VEST SHOP — CADASTRO
+   Y2K 3D / CROMADO
+   PALETA 1
+========================================= */
 
 * {
     margin: 0;
@@ -8,367 +10,523 @@
     box-sizing: border-box;
 }
 
-
-/* ==========================================
-   BODY
-========================================== */
-
 body {
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background: #f5f5f7;
-
-    color: #222;
-
-    min-height: 100vh;
-
-}
-
-
-/* ==========================================
-   CONTAINER
-========================================== */
-
-.container {
-
     min-height: 100vh;
 
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
+    padding: 30px;
 
-    padding: 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
 
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            #D2DDEF 0%,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            #700F16 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #281D21 0%,
+            #777279 50%,
+            #281D21 100%
+        );
+
+    overflow-x: hidden;
 }
 
 
-/* ==========================================
+/* =========================================
+   BRILHOS
+========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    top: -220px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(210,221,239,0.45),
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    right: -200px;
+    bottom: -200px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(112,15,22,0.45),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, 560px);
+}
+
+
+/* =========================================
    CARD
-========================================== */
+========================================= */
 
 .register-card {
+    position: relative;
 
-    width: 100%;
+    padding: 45px;
 
-    max-width: 460px;
+    border-radius: 28px;
 
-    background: #ffffff;
+    background:
+        linear-gradient(
+            145deg,
+            #D2DDEF 0%,
+            #AEB0BF 35%,
+            #777279 70%,
+            #AEB0BF 100%
+        );
 
-    padding: 40px;
-
-    border-radius: 24px;
+    border: 2px solid #D2DDEF;
 
     box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.08);
+        inset 0 2px 4px rgba(255,255,255,0.9),
+        inset 0 -8px 15px rgba(40,29,33,0.3),
+        0 18px 35px rgba(40,29,33,0.5),
+        0 30px 60px rgba(40,29,33,0.3);
 
+    overflow: hidden;
 }
 
 
-/* ==========================================
+/* =========================================
+   BRILHO CROMADO
+========================================= */
+
+.register-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -70%;
+
+    width: 60%;
+    height: 300%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.5),
+            transparent
+        );
+
+    transform: rotate(25deg);
+
+    animation: brilho 5s infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
    LOGO
-========================================== */
+========================================= */
 
 .brand {
+    position: relative;
+    z-index: 2;
 
     text-align: center;
 
-    margin-bottom: 35px;
-
+    margin-bottom: 28px;
 }
 
 .brand span {
+    display: inline-block;
 
-    font-size: 20px;
+    padding: 9px 22px;
 
-    font-weight: 800;
+    border-radius: 20px;
 
-    letter-spacing: 3px;
+    color: #D2DDEF;
 
+    background:
+        linear-gradient(
+            145deg,
+            #700F16,
+            #281D21
+        );
+
+    border: 2px solid #D2DDEF;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        1px 1px 0 #777279,
+        2px 2px 0 #281D21;
+
+    box-shadow:
+        inset 0 2px 3px rgba(255,255,255,0.4),
+        inset 0 -4px 7px rgba(0,0,0,0.4),
+        0 6px 0 #281D21,
+        0 10px 15px rgba(40,29,33,0.3);
 }
 
 
-/* ==========================================
-   HEADER
-========================================== */
+/* =========================================
+   CABEÇALHO
+========================================= */
 
 .header {
+    position: relative;
+    z-index: 2;
 
     text-align: center;
 
-    margin-bottom: 30px;
-
+    margin-bottom: 28px;
 }
 
 .header h1 {
+    color: #281D21;
 
-    font-size: 30px;
+    font-size: 32px;
 
-    margin-bottom: 10px;
+    line-height: 1.1;
 
+    margin-bottom: 12px;
+
+    text-shadow:
+        1px 1px 0 #D2DDEF,
+        3px 3px 0 rgba(119,114,121,0.55);
 }
 
 .header p {
-
-    color: #777;
+    color: #281D21;
 
     font-size: 15px;
 
     line-height: 1.5;
-
 }
 
 
-/* ==========================================
-   FORMULÁRIO
-========================================== */
+/* =========================================
+   CAMPOS
+========================================= */
 
 .form-group {
+    position: relative;
+    z-index: 2;
 
-    margin-bottom: 20px;
-
+    margin-bottom: 17px;
 }
 
 .form-group label {
-
     display: block;
+
+    margin-bottom: 7px;
+
+    color: #281D21;
 
     font-size: 14px;
 
-    font-weight: 600;
-
-    margin-bottom: 8px;
-
+    font-weight: 800;
 }
 
-.form-group input {
 
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-group input {
     width: 100%;
 
-    padding: 15px;
+    padding: 12px 14px;
 
-    border: 1px solid #ddd;
+    border: 2px solid #D2DDEF;
 
     border-radius: 12px;
-
-    font-size: 15px;
 
     outline: none;
 
-    transition: 0.2s;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(210,221,239,0.95),
+            rgba(174,176,191,0.9)
+        );
 
-}
-
-.form-group input:focus {
-
-    border-color: #111;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(0, 0, 0, 0.05);
-
-}
-
-.form-group small {
-
-    display: block;
-
-    margin-top: 7px;
-
-    color: #888;
-
-    font-size: 12px;
-
-}
-
-
-/* ==========================================
-   TERMOS
-========================================== */
-
-.terms {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-    margin: 20px 0;
-
-    font-size: 13px;
-
-    color: #666;
-
-    line-height: 1.5;
-
-}
-
-.terms input {
-
-    margin-top: 3px;
-
-    cursor: pointer;
-
-}
-
-.terms a {
-
-    color: #111;
-
-    font-weight: 600;
-
-}
-
-
-/* ==========================================
-   MENSAGEM
-========================================== */
-
-.message {
-
-    display: none;
-
-    padding: 12px;
-
-    border-radius: 10px;
-
-    margin-bottom: 15px;
-
-    font-size: 14px;
-
-    line-height: 1.4;
-
-}
-
-.message.error {
-
-    display: block;
-
-    background: #fff0f0;
-
-    color: #b00020;
-
-}
-
-.message.success {
-
-    display: block;
-
-    background: #eefaf1;
-
-    color: #187a35;
-
-}
-
-
-/* ==========================================
-   BOTÃO
-========================================== */
-
-.primary-button {
-
-    width: 100%;
-
-    border: none;
-
-    border-radius: 12px;
-
-    padding: 16px;
-
-    background: #111;
-
-    color: #ffffff;
+    color: #281D21;
 
     font-size: 15px;
 
-    font-weight: 600;
+    box-shadow:
+        inset 0 3px 7px rgba(40,29,33,0.2),
+        inset 0 -2px 3px rgba(255,255,255,0.7);
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #777279;
+}
+
+.form-group input:focus {
+    border-color: #700F16;
+
+    box-shadow:
+        0 0 0 3px rgba(112,15,22,0.18),
+        inset 0 3px 7px rgba(40,29,33,0.2);
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.remember {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 20px 0;
+}
+
+.remember input {
+    width: 17px;
+    height: 17px;
+
+    accent-color: #700F16;
 
     cursor: pointer;
-
-    transition: 0.2s;
-
 }
 
-.primary-button:hover {
+.remember label {
+    color: #281D21;
 
-    background: #333;
+    font-size: 13px;
 
-    transform: translateY(-1px);
+    font-weight: bold;
 
-}
-
-.primary-button:disabled {
-
-    background: #999;
-
-    cursor: not-allowed;
-
-    transform: none;
-
+    cursor: pointer;
 }
 
 
-/* ==========================================
-   LOGIN
-========================================== */
+/* =========================================
+   MENSAGEM
+========================================= */
 
-.login-link {
+.message {
+    position: relative;
+    z-index: 2;
+
+    min-height: 20px;
+
+    margin-bottom: 8px;
 
     text-align: center;
 
-    margin-top: 25px;
+    color: #700F16;
 
     font-size: 14px;
 
-    color: #777;
+    font-weight: bold;
+}
 
+
+/* =========================================
+   BOTÃO
+========================================= */
+
+.primary-button {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid #D2DDEF;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #700F16,
+            #281D21
+        );
+
+    color: #D2DDEF;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    text-shadow:
+        1px 1px 0 #777279;
+
+    box-shadow:
+        inset 0 2px 3px rgba(255,255,255,0.4),
+        inset 0 -5px 8px rgba(0,0,0,0.4),
+        0 7px 0 #281D21,
+        0 12px 20px rgba(40,29,33,0.35);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        inset 0 2px 3px rgba(255,255,255,0.5),
+        inset 0 -5px 8px rgba(0,0,0,0.4),
+        0 10px 0 #281D21,
+        0 17px 25px rgba(40,29,33,0.4);
+}
+
+.primary-button:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,0.5),
+        0 3px 0 #281D21;
+}
+
+
+/* =========================================
+   LINK PARA LOGIN
+========================================= */
+
+.login-link {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    color: #281D21;
+
+    font-size: 14px;
 }
 
 .login-link a {
-
     margin-left: 5px;
 
-    color: #111;
+    color: #700F16;
 
-    font-weight: 700;
+    font-weight: 900;
 
     text-decoration: none;
-
 }
 
 .login-link a:hover {
-
     text-decoration: underline;
-
 }
 
 
-/* ==========================================
-   RESPONSIVIDADE
-========================================== */
+/* =========================================
+   ANIMAÇÃO
+========================================= */
 
-@media (max-width: 500px) {
+@keyframes brilho {
+
+    0% {
+        left: -70%;
+    }
+
+    40% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 18px;
+    }
 
     .register-card {
-
-        padding: 30px 22px;
-
-        border-radius: 18px;
-
+        padding: 32px 24px;
     }
 
     .header h1 {
-
-        font-size: 26px;
-
+        font-size: 27px;
     }
 
+    .brand span {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
 }
-

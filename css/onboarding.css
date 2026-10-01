@@ -1,0 +1,335 @@
+/* ================================
+   VEST SHOP — Y2K ONBOARDING
+   PALETA 1
+   #281D21
+   #700F16
+   #777279
+   #AEB0BF
+   #D2DDEF
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, #d2ddef 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #700f16 0%, transparent 30%),
+        linear-gradient(135deg, #281d21, #777279, #281d21);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+/* brilho decorativo */
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+
+    background: radial-gradient(
+        circle,
+        rgba(210, 221, 239, 0.35),
+        transparent 70%
+    );
+
+    top: -180px;
+    left: -150px;
+
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+/* outro brilho */
+body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+
+    background: radial-gradient(
+        circle,
+        rgba(112, 15, 22, 0.4),
+        transparent 70%
+    );
+
+    bottom: -200px;
+    right: -150px;
+
+    filter: blur(15px);
+    pointer-events: none;
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.onboarding {
+    width: min(90%, 620px);
+    position: relative;
+}
+
+
+/* ================================
+   CARTÃO PRINCIPAL
+================================ */
+
+.etapa {
+    position: relative;
+
+    padding: 55px 50px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(210, 221, 239, 0.95),
+            rgba(174, 176, 191, 0.92) 45%,
+            rgba(119, 114, 121, 0.95)
+        );
+
+    border: 2px solid rgba(210, 221, 239, 0.8);
+
+    box-shadow:
+        inset 0 2px 3px rgba(255, 255, 255, 0.9),
+        inset 0 -5px 10px rgba(40, 29, 33, 0.3),
+        0 15px 25px rgba(40, 29, 33, 0.45),
+        0 30px 60px rgba(40, 29, 33, 0.35);
+
+    text-align: center;
+
+    overflow: hidden;
+
+    animation: entrada 0.6s ease;
+}
+
+
+/* brilho cromado passando pelo cartão */
+
+.etapa::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -60%;
+
+    width: 70%;
+    height: 300%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.45),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    animation: brilho 5s infinite;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.etapa span {
+    position: relative;
+    z-index: 2;
+
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    margin-bottom: 35px;
+
+    border-radius: 20px;
+
+    color: #d2ddef;
+
+    background: linear-gradient(
+        145deg,
+        #700f16,
+        #281d21
+    );
+
+    border: 1px solid rgba(210, 221, 239, 0.7);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,0.4),
+        0 5px 10px rgba(40, 29, 33, 0.4);
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+
+/* ================================
+   TEXTOS
+================================ */
+
+.etapa p {
+    position: relative;
+    z-index: 2;
+
+    color: #281d21;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    margin-bottom: 28px;
+}
+
+.etapa h1 {
+    position: relative;
+    z-index: 2;
+
+    color: #281d21;
+
+    font-size: clamp(28px, 5vw, 42px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        1px 1px 0 #d2ddef,
+        2px 2px 0 rgba(119, 114, 121, 0.7),
+        4px 4px 8px rgba(40, 29, 33, 0.3);
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+
+.etapa button {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 5px;
+
+    padding: 14px 40px;
+
+    border: 2px solid #d2ddef;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #700f16,
+            #281d21
+        );
+
+    color: #d2ddef;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 2px 2px rgba(255,255,255,0.35),
+        inset 0 -4px 6px rgba(0,0,0,0.35),
+        0 7px 0 #281d21,
+        0 12px 20px rgba(40, 29, 33, 0.35);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.etapa button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        inset 0 2px 2px rgba(255,255,255,0.45),
+        inset 0 -4px 6px rgba(0,0,0,0.35),
+        0 10px 0 #281d21,
+        0 18px 25px rgba(40, 29, 33, 0.4);
+}
+
+.etapa button:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        inset 0 2px 3px rgba(0,0,0,0.4),
+        0 3px 0 #281d21;
+}
+
+
+/* ================================
+   ANIMAÇÕES
+================================ */
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes brilho {
+    0% {
+        left: -70%;
+    }
+
+    40% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 600px) {
+
+    .onboarding {
+        width: 92%;
+    }
+
+    .etapa {
+        padding: 40px 25px;
+        border-radius: 22px;
+    }
+
+    .etapa h1 {
+        font-size: 30px;
+    }
+
+    .etapa p {
+        font-size: 15px;
+    }
+
+    .etapa button {
+        width: 100%;
+    }
+}

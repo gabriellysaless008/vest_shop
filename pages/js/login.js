@@ -33,7 +33,15 @@ async function login(event) {
         console.log(response.data);
 
         if (response.status === 200) {
-            window.location.href = "index.html";
+
+        const onboardingConcluido = localStorage.getItem("onboardingConcluido");
+
+            if (onboardingConcluido === "true") {
+                window.location.href = "index.html";
+            } else {
+            window.location.href = "onboarding.html";
+        }
+
 }
 
     } catch (error) {
