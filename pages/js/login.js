@@ -12,7 +12,7 @@ function pegarDados() {
     return usuario;
 }
 
-async function cadastrar() {
+async function login(event) {
 
     event.preventDefault();
 
@@ -31,6 +31,10 @@ async function cadastrar() {
 
         console.log("Resposta do servidor:");
         console.log(response.data);
+
+        if (response.status === 200) {
+            window.location.href = "index.html";
+}
 
     } catch (error) {
         console.error("ERRO COMPLETO:", error);

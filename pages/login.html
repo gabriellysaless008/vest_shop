@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar | Vest Shop</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             </header>
 
             <!-- FORMULÁRIO -->
-            <form id="loginForm">
+            <form id="form">
 
                 <!-- E-MAIL -->
                 <div class="form-group">
@@ -39,7 +39,7 @@
                         <a href="#">Esqueci minha senha</a>
                     </div>
 
-                    <input type="password" id="password" name="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
                 </div>
 
                 <!-- LEMBRAR DE MIM -->
@@ -52,7 +52,7 @@
                 <div id="message" class="message"></div>
 
                 <!-- BOTÃO -->
-                <button type="submit" id="botao_login" class="primary-button" onclick="cadastrar(event)">Entrar</button>
+                <button type="submit" id="botao_login" class="primary-button" onclick="login(event)">Entrar</button>
 
             </form>
 
@@ -66,7 +66,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/js/login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
