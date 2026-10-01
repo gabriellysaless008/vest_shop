@@ -37,7 +37,7 @@ async function login(event) {
         const onboardingConcluido = localStorage.getItem("onboardingConcluido");
 
             if (onboardingConcluido === "true") {
-                window.location.href = "index.html";
+                window.location.href = "home.html";
             } else {
             window.location.href = "onboarding.html";
         }

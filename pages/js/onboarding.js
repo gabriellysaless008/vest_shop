@@ -35,5 +35,5 @@ function finalizarOnboarding() {
 
     console.log("Onboarding concluído");
 
-    window.location.href = "index.html";
+    window.location.href = "home.html";
 }
