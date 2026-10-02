@@ -1,39 +1,57 @@
 let etapaAtual = 0;
 
-function comecarOnboarding() {
-    document.getElementById("inicio").style.display = "none";
-    document.getElementById("etapa1").style.display = "block";
-    
-    etapaAtual = 1;
-    console.log("Foi para a etapa 1");
-}
+const etapas = [
+    document.getElementById("inicio"),
+    document.getElementById("etapa1"),
+    document.getElementById("etapa2"),
+    document.getElementById("etapa3")
+];
 
+function mostrarEtapa(numero) {
 
-function proximaEtapa() {
-    if (etapaAtual === 1) {
-        document.getElementById("etapa1").style.display = "none";
-        document.getElementById("etapa2").style.display = "block";
+    etapas.forEach((etapa) => {
+        etapa.style.display = "none";
+        etapa.setAttribute("aria-hidden", "true");
+    });
 
-        etapaAtual = 2;
+    etapas[numero].style.display = "block";
+    etapas[numero].setAttribute("aria-hidden", "false");
 
-        console.log("Está na etapa 2");
+    etapaAtual = numero;
 
-    } else if (etapaAtual === 2) {
-        document.getElementById("etapa2").style.display = "none";
-        document.getElementById("etapa3").style.display = "block";
+    const titulo = etapas[numero].querySelector("h1");
 
-        etapaAtual = 3;
-
-        console.log("Está na etapa 3");
+    if (titulo) {
+        titulo.setAttribute("tabindex", "-1");
+        titulo.focus();
     }
 }
 
+function comecarOnboarding() {
+    mostrarEtapa(1);
+}
 
+function proximaEtapa() {
+
+    if (etapaAtual < etapas.length - 1) {
+        mostrarEtapa(etapaAtual + 1);
+    }
+
+}
+
+function voltarEtapa() {
+
+    if (etapaAtual > 1) {
+        mostrarEtapa(etapaAtual - 1);
+    }
+
+}
 
 function finalizarOnboarding() {
+
     localStorage.setItem("onboardingConcluido", "true");
 
-    console.log("Onboarding concluído");
+    mostrarEtapa(3);
 
-    window.location.href = "home.html";
+    console.log("Onboarding concluído!");
 }
