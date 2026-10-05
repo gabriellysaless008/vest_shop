@@ -47,11 +47,53 @@ function voltarEtapa() {
 
 }
 
-function finalizarOnboarding() {
+async function finalizarOnboarding() {
 
-    localStorage.setItem("onboardingConcluido", "true");
+    const idUsuario = localStorage.getItem("id_usuario");
 
-    mostrarEtapa(3);
+    console.log("ID do usuário:", idUsuario);
 
-    console.log("Onboarding concluído!");
+    if (!idUsuario) {
+
+        alert("Usuário não identificado. Faça login novamente.");
+
+        window.location.href = "login.html";
+
+        return;
+    }
+
+    try {
+
+        const response = await axios.put(
+            `http://127.0.0.1:3000/usuario/${idUsuario}/onboarding`
+        );
+
+        console.log("Resposta do servidor:");
+        console.log(response.data);
+
+        if (response.status === 200) {
+
+            console.log("Onboarding concluído!");
+
+            mostrarEtapa(3);
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Erro ao concluir onboarding:",
+            error
+        );
+
+        console.error(
+            "Resposta:",
+            error.response?.data
+        );
+
+        alert(
+            error.response?.data?.erro ||
+            "Não foi possível concluir o onboarding."
+        );
+    }
 }
