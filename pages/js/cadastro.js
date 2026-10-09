@@ -36,32 +36,111 @@ function pegarDados() {
     return usuario;
 }
 
-async function cadastrar(event) {
 
+async function cadastrar(event) {
     event.preventDefault();
 
-    console.log("Chamou o cadastrar");
+    const mensagem = document.getElementById("message");
+
+    function mostrarMensagem(texto, sucesso = false) {
+        if (mensagem) {
+            mensagem.textContent = texto;
+            mensagem.style.color = sucesso ? "#287a45" : "#b42318";
+            mensagem.style.display = "block";
+        } else {
+            alert(texto);
+        }
+    }
 
     try {
-        let usuario = pegarDados();
+        const usuario = pegarDados();
 
-        console.log("Enviando para o servidor:");
-        console.log(usuario);
+        // Validar campos obrigatórios
+        if (
+            !usuario.nome.trim() ||
+            !usuario.email.trim() ||
+            !usuario.data_nascimento.trim() ||
+            !usuario.senha ||
+            !usuario.confirmaSenha
+        ) {
+            mostrarMensagem("Preencha todos os campos obrigatórios.");
+            return;
+        }
+
+        // Conferir se as senhas são iguais
+        if (usuario.senha !== usuario.confirmaSenha) {
+            mostrarMensagem("As senhas não coincidem. Confira os dois campos.");
+            document.getElementById("confirmaSenha").focus();
+            return;
+        }
+
+        // Não enviar o campo de confirmação se a API não precisar dele
+        const dadosCadastro = {
+            nome: usuario.nome.trim(),
+            email: usuario.email.trim(),
+            data_nascimento: usuario.data_nascimento,
+            senha: usuario.senha,
+            confirmaSenha: usuario.confirmaSenha,
+            participa_programa_fidelidade:
+            usuario.participa_programa_fidelidade
+        };
 
         const response = await axios.post(
             "http://127.0.0.1:3000/cadastro",
-            usuario
+            dadosCadastro
         );
 
-        console.log("Resposta do servidor:");
-        console.log(response.data);
+        console.log("Resposta do servidor:", response.data);
+
+        mostrarMensagem(
+            "Cadastro realizado com sucesso! Você será direcionado para o login.",
+            true
+        );
+
+        // Redirecionar após dar tempo para a pessoa ler a mensagem
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1800);
 
     } catch (error) {
-        console.error("ERRO COMPLETO:", error);
-        console.error("Resposta do servidor:", error.response);
-        console.error("Status:", error.response?.status);
-        console.error("Dados do erro:", error.response?.data);
+        console.error("Erro ao cadastrar:", error);
+        console.error("Resposta do servidor:", error.response?.data);
 
-        alert("Erro ao cadastrar usuário.");
+        if (!error.response) {
+            mostrarMensagem(
+                "Não foi possível conectar ao servidor. Verifique se ele está funcionando e tente novamente."
+            );
+            return;
+        }
+
+        const status = error.response.status;
+        const dadosErro = error.response.data;
+
+        // Usar a mensagem do backend quando ela estiver disponível
+        const mensagemServidor =
+            typeof dadosErro === "string"
+                ? dadosErro
+                : dadosErro?.message || dadosErro?.erro;
+
+        if (status === 400) {
+            mostrarMensagem(
+                mensagemServidor ||
+                "Os dados enviados são inválidos. Confira os campos e tente novamente."
+            );
+        } else if (status === 409) {
+            mostrarMensagem(
+                mensagemServidor ||
+                "Este e-mail já está cadastrado. Tente entrar na sua conta."
+            );
+        } else if (status >= 500) {
+            mostrarMensagem(
+                "O servidor encontrou um problema ao cadastrar. Tente novamente mais tarde."
+            );
+        } else {
+            mostrarMensagem(
+                mensagemServidor ||
+                "Não foi possível concluir o cadastro. Tente novamente."
+            );
+        }
     }
 }
