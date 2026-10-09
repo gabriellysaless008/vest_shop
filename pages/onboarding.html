@@ -1,57 +1,111 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bem-vindo | Vest Shop</title>
 
-    <link rel="stylesheet" href="../css/onboarding.css">
+<title>Bem-vindo | Vest Shop</title>
+
+<link rel="stylesheet" href="../css/onboarding.css">
+
+
 </head>
 
 <body>
 
-    <main class="onboarding">
+
+<main class="onboarding">
+
+    <!-- FOTO EDITORIAL -->
+    <aside class="onboarding-image">
+        <div class="image-caption">
+            <span>VEST SHOP</span>
+            <p>MODA QUE EXPRESSA VOCÊ.</p>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO DO ONBOARDING -->
+    <div class="onboarding-content">
 
         <!-- TELA INICIAL -->
         <section id="inicio" class="etapa">
             <span class="brand">VEST SHOP</span>
+
+            <p class="eyebrow">SEJA BEM-VINDO</p>
+
             <h1>Bem-vindo à Vest Shop!</h1>
-            <p>Vamos te mostrar rapidamente como funciona a plataforma.</p>
-            <button type="button" onclick="comecarOnboarding()">Começar</button>
+
+            <p>
+                Vamos te mostrar rapidamente como funciona a plataforma.
+            </p>
+
+            <button type="button" onclick="comecarOnboarding()">
+                Começar <span aria-hidden="true">→</span>
+            </button>
         </section>
 
         <!-- ETAPA 1 -->
         <section id="etapa1" class="etapa" style="display: none;">
             <span class="brand">VEST SHOP</span>
-            <p class="contador">1 de 3</p>
+
+            <p class="contador">01 <span>/ 03</span></p>
+
             <h1>Conheça a Vest Shop</h1>
-            <p>Aqui você poderá encontrar e navegar pelos produtos disponíveis na plataforma.</p>
-            <button type="button" onclick="proximaEtapa()">Próximo</button>
+
+            <p>
+                Aqui você poderá encontrar e navegar pelos produtos
+                disponíveis na plataforma.
+            </p>
+
+            <button type="button" onclick="proximaEtapa()">
+                Próximo <span aria-hidden="true">→</span>
+            </button>
         </section>
 
         <!-- ETAPA 2 -->
         <section id="etapa2" class="etapa" style="display: none;">
             <span class="brand">VEST SHOP</span>
-            <p class="contador">2 de 3</p>
+
+            <p class="contador">02 <span>/ 03</span></p>
+
             <h1>Encontre o que procura</h1>
-            <p>Utilize a busca e os filtros para encontrar produtos com facilidade.</p>
-            <button type="button" onclick="proximaEtapa()">Próximo</button>
+
+            <p>
+                Utilize a busca e os filtros para encontrar produtos
+                com facilidade.
+            </p>
+
+            <button type="button" onclick="proximaEtapa()">
+                Próximo <span aria-hidden="true">→</span>
+            </button>
         </section>
 
         <!-- ETAPA 3 -->
         <section id="etapa3" class="etapa" style="display: none;">
             <span class="brand">VEST SHOP</span>
-            <p class="contador">3 de 3</p>
+
+            <p class="contador">03 <span>/ 03</span></p>
+
             <h1>Programa de fidelidade</h1>
-            <p>Participe do nosso programa de fidelidade e aproveite os benefícios disponíveis.</p>
-            <button type="button" onclick="finalizarOnboarding()">Concluir</button>
+
+            <p>
+                Participe do nosso programa de fidelidade e aproveite
+                os benefícios disponíveis.
+            </p>
+
+            <button type="button" onclick="finalizarOnboarding()">
+                Concluir <span aria-hidden="true">→</span>
+            </button>
         </section>
 
-    </main>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/onboarding.js"></script>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/onboarding.js"></script>
 
 </body>
 </html>

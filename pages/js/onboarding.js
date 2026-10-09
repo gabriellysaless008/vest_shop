@@ -48,17 +48,13 @@ function voltarEtapa() {
 }
 
 async function finalizarOnboarding() {
-
     const idUsuario = localStorage.getItem("id_usuario");
 
     console.log("ID do usuário:", idUsuario);
 
     if (!idUsuario) {
-
         alert("Usuário não identificado. Faça login novamente.");
-
         window.location.href = "login.html";
-
         return;
     }
 
@@ -72,28 +68,13 @@ async function finalizarOnboarding() {
         console.log(response.data);
 
         if (response.status === 200) {
-
             console.log("Onboarding concluído!");
-
-            mostrarEtapa(3);
-
+            window.location.href = "home.html";
         }
 
     } catch (error) {
-
-        console.error(
-            "Erro ao concluir onboarding:",
-            error
-        );
-
-        console.error(
-            "Resposta:",
-            error.response?.data
-        );
-
-        alert(
-            error.response?.data?.erro ||
-            "Não foi possível concluir o onboarding."
-        );
+        console.error("Erro ao concluir onboarding:", error);
+        console.error("Resposta:", error.response?.data);
+        alert(error.response?.data?.erro || "Não foi possível concluir o onboarding.");
     }
 }

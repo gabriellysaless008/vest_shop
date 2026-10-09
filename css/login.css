@@ -1,7 +1,6 @@
 /* =========================================
    VEST SHOP — LOGIN
-   Y2K 3D / CROMADO
-   PALETA 1
+   ESTILO EDITORIAL MINIMALISTA
 ========================================= */
 
 * {
@@ -12,332 +11,132 @@
 
 body {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 30px;
 
     font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        radial-gradient(
-            circle at 15% 15%,
-            #D2DDEF 0%,
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 85% 85%,
-            #700F16 0%,
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #281D21 0%,
-            #777279 50%,
-            #281D21 100%
-        );
-
-    overflow: hidden;
+    background: #f5f5f3;
+    color: #171717;
 }
 
-
-/* =========================================
-   BRILHOS DO FUNDO
-========================================= */
-
-body::before {
-    content: "";
-
-    position: fixed;
-
-    width: 500px;
-    height: 500px;
-
-    top: -220px;
-    left: -180px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(210, 221, 239, 0.45),
-            transparent 70%
-        );
-
-    filter: blur(10px);
-
-    pointer-events: none;
-}
-
-body::after {
-    content: "";
-
-    position: fixed;
-
-    width: 450px;
-    height: 450px;
-
-    right: -200px;
-    bottom: -200px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(112, 15, 22, 0.45),
-            transparent 70%
-        );
-
-    filter: blur(15px);
-
-    pointer-events: none;
-}
-
-
-/* =========================================
-   CONTAINER
-========================================= */
+/* CONTAINER */
 
 .container {
     position: relative;
-    z-index: 2;
-
-    width: min(100%, 500px);
+    z-index: 1;
+    width: min(100%, 460px);
 }
 
-
-/* =========================================
-   CARD
-========================================= */
+/* CARD */
 
 .login-card {
     position: relative;
-
-    padding: 45px;
-
-    border-radius: 28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #D2DDEF 0%,
-            #AEB0BF 35%,
-            #777279 70%,
-            #AEB0BF 100%
-        );
-
-    border: 2px solid #D2DDEF;
-
-    box-shadow:
-        inset 0 2px 4px rgba(255,255,255,0.9),
-        inset 0 -8px 15px rgba(40,29,33,0.3),
-        0 18px 35px rgba(40,29,33,0.5),
-        0 30px 60px rgba(40,29,33,0.3);
-
-    overflow: hidden;
+    padding: 44px;
+    background: #ffffff;
+    border: 1px solid #e7e7e4;
+    border-radius: 0;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
 }
 
-
-/* brilho cromado */
-
-.login-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: -100%;
-    left: -70%;
-
-    width: 60%;
-    height: 300%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.5),
-            transparent
-        );
-
-    transform: rotate(25deg);
-
-    animation: brilho 5s infinite;
-
-    pointer-events: none;
-}
-
-
-/* =========================================
-   LOGO
-========================================= */
+/* LOGO */
 
 .brand {
-    position: relative;
-    z-index: 2;
-
     text-align: center;
-
-    margin-bottom: 30px;
+    margin-bottom: 38px;
 }
 
 .brand span {
     display: inline-block;
+    padding: 0;
+    color: #171717;
+    background: transparent;
+    border: none;
+    border-radius: 0;
 
-    padding: 9px 22px;
-
-    border-radius: 20px;
-
-    color: #D2DDEF;
-
-    background:
-        linear-gradient(
-            145deg,
-            #700F16,
-            #281D21
-        );
-
-    border: 2px solid #D2DDEF;
-
-    font-size: 14px;
-    font-weight: 900;
-
+    font-size: 13px;
+    font-weight: 800;
     letter-spacing: 5px;
-
-    text-shadow:
-        1px 1px 0 #777279,
-        2px 2px 0 #281D21;
-
-    box-shadow:
-        inset 0 2px 3px rgba(255,255,255,0.4),
-        inset 0 -4px 7px rgba(0,0,0,0.4),
-        0 6px 0 #281D21,
-        0 10px 15px rgba(40,29,33,0.3);
+    text-shadow: none;
+    box-shadow: none;
 }
 
-
-/* =========================================
-   CABEÇALHO
-========================================= */
+/* CABEÇALHO */
 
 .header {
-    position: relative;
-    z-index: 2;
-
     text-align: center;
-
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
 .header h1 {
-    color: #281D21;
-
-    font-size: 32px;
-
-    line-height: 1.1;
-
     margin-bottom: 12px;
-
-    text-shadow:
-        1px 1px 0 #D2DDEF,
-        3px 3px 0 rgba(119,114,121,0.55);
+    color: #171717;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-shadow: none;
 }
 
 .header p {
-    color: #281D21;
-
-    font-size: 15px;
-
-    line-height: 1.5;
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-
-/* =========================================
-   FORMULÁRIO
-========================================= */
+/* FORMULÁRIO */
 
 .form-group {
-    position: relative;
-    z-index: 2;
-
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .form-group label {
     display: block;
-
-    margin-bottom: 8px;
-
-    color: #281D21;
-
-    font-size: 14px;
-
-    font-weight: 800;
+    margin-bottom: 9px;
+    color: #242424;
+    font-size: 13px;
+    font-weight: 600;
 }
 
-
-/* =========================================
-   INPUTS
-========================================= */
+/* CAMPOS */
 
 .form-group input {
+    display: block;
     width: 100%;
+    min-height: 46px;
+    padding: 13px 14px;
 
-    padding: 13px 15px;
-
-    border: 2px solid #D2DDEF;
-
-    border-radius: 12px;
-
+    border: 1px solid #dcdcd8;
+    border-radius: 0;
     outline: none;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(210,221,239,0.95),
-            rgba(174,176,191,0.9)
-        );
+    background: #ffffff;
+    color: #171717;
+    font-family: inherit;
+    font-size: 14px;
 
-    color: #281D21;
-
-    font-size: 15px;
-
-    box-shadow:
-        inset 0 3px 7px rgba(40,29,33,0.2),
-        inset 0 -2px 3px rgba(255,255,255,0.7);
-
-    transition:
-        border 0.2s ease,
-        box-shadow 0.2s ease;
+    box-shadow: none;
+    transition: border-color 0.2s ease;
 }
 
 .form-group input::placeholder {
-    color: #777279;
+    color: #a0a09c;
 }
 
 .form-group input:focus {
-    border-color: #700F16;
-
-    box-shadow:
-        0 0 0 3px rgba(112,15,22,0.18),
-        inset 0 3px 7px rgba(40,29,33,0.2);
+    border-color: #171717;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
 }
 
-
-/* =========================================
-   SENHA / LINK
-========================================= */
+/* LINK AUXILIAR DA SENHA */
 
 .password-label {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
-    margin-bottom: 8px;
+    gap: 10px;
+    margin-bottom: 9px;
 }
 
 .password-label label {
@@ -345,180 +144,229 @@ body::after {
 }
 
 .password-label a {
-    color: #700F16;
-
+    color: #555555;
     font-size: 12px;
-
-    font-weight: bold;
-
-    text-decoration: none;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .password-label a:hover {
-    text-decoration: underline;
+    color: #000000;
 }
 
-
-/* =========================================
-   MENSAGEM
-========================================= */
+/* MENSAGENS */
 
 .message {
-    position: relative;
-    z-index: 2;
-
     min-height: 20px;
-
-    margin-bottom: 10px;
-
+    margin-bottom: 12px;
+    color: #a12626;
+    font-size: 13px;
+    line-height: 1.5;
     text-align: center;
-
-    color: #700F16;
-
-    font-size: 14px;
-
-    font-weight: bold;
 }
 
-
-/* =========================================
-   BOTÃO
-========================================= */
+/* BOTÃO */
 
 .primary-button {
-    position: relative;
-    z-index: 2;
-
     width: 100%;
+    min-height: 48px;
+    padding: 14px 18px;
 
-    padding: 14px;
+    border: 1px solid #171717;
+    border-radius: 0;
 
-    border: 2px solid #D2DDEF;
+    background: #171717;
+    color: #ffffff;
 
-    border-radius: 14px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #700F16,
-            #281D21
-        );
-
-    color: #D2DDEF;
-
-    font-size: 16px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 
     cursor: pointer;
-
-    text-shadow:
-        1px 1px 0 #777279;
-
-    box-shadow:
-        inset 0 2px 3px rgba(255,255,255,0.4),
-        inset 0 -5px 8px rgba(0,0,0,0.4),
-        0 7px 0 #281D21,
-        0 12px 20px rgba(40,29,33,0.35);
+    box-shadow: none;
+    text-shadow: none;
 
     transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
 .primary-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        inset 0 2px 3px rgba(255,255,255,0.5),
-        inset 0 -5px 8px rgba(0,0,0,0.4),
-        0 10px 0 #281D21,
-        0 17px 25px rgba(40,29,33,0.4);
+    background: #ffffff;
+    color: #171717;
 }
 
 .primary-button:active {
-    transform: translateY(4px);
-
-    box-shadow:
-        inset 0 2px 4px rgba(0,0,0,0.5),
-        0 3px 0 #281D21;
+    transform: scale(0.99);
 }
 
-
-/* =========================================
-   CADASTRO
-========================================= */
+/* LINK PARA CADASTRO */
 
 .register-link {
-    position: relative;
-    z-index: 2;
-
     margin-top: 28px;
-
+    color: #777777;
+    font-size: 13px;
     text-align: center;
-
-    color: #281D21;
-
-    font-size: 14px;
 }
 
 .register-link a {
     margin-left: 5px;
-
-    color: #700F16;
-
-    font-weight: 900;
-
-    text-decoration: none;
+    color: #171717;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .register-link a:hover {
-    text-decoration: underline;
+    color: #666666;
 }
 
+/* ACESSIBILIDADE */
 
-/* =========================================
-   ANIMAÇÃO
-========================================= */
-
-@keyframes brilho {
-
-    0% {
-        left: -70%;
-    }
-
-    40% {
-        left: 130%;
-    }
-
-    100% {
-        left: 130%;
-    }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid #555555;
+    outline-offset: 3px;
 }
 
-
-/* =========================================
-   RESPONSIVO
-========================================= */
+/* RESPONSIVO */
 
 @media (max-width: 600px) {
-
     body {
         padding: 18px;
+        align-items: center;
     }
 
     .login-card {
-        padding: 32px 24px;
+        padding: 34px 24px;
     }
 
     .header h1 {
-        font-size: 27px;
+        font-size: 28px;
+    }
+
+    .brand {
+        margin-bottom: 30px;
     }
 
     .brand span {
         font-size: 12px;
         letter-spacing: 4px;
+    }
+}
+
+@media (max-width: 360px) {
+    .login-card {
+        padding: 28px 18px;
+    }
+
+    .password-label a {
+        font-size: 11px;
+    }
+}
+
+```css
+/* =========================================
+   LAYOUT EDITORIAL COM FOTO
+========================================= */
+
+body {
+    min-height: 100vh;
+    padding: 30px;
+    background: #f5f5f3;
+    overflow-x: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: min(100%, 1000px);
+    min-height: 620px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #e7e7e4;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+}
+
+.login-image {
+    position: relative;
+    min-height: 620px;
+    background-color: #222;
+    background-image:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.6),
+            transparent 50%
+        ),
+        url("../imagens/modelo-para-as-telas-v2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.image-caption {
+    position: absolute;
+    left: 30px;
+    right: 20px;
+    bottom: 30px;
+    color: #fff;
+}
+
+.image-caption span {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    letter-spacing: 4px;
+}
+
+.image-caption p {
+    margin-top: 12px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 44px;
+    border: none;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+}
+
+/* TABLETS E CELULARES */
+
+@media (max-width: 700px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .login-image {
+        min-height: 240px;
+        background-position: center 35%;
+    }
+
+    .image-caption {
+        left: 22px;
+        bottom: 20px;
+    }
+
+    .image-caption span {
+        font-size: 21px;
+    }
+
+    .login-card {
+        padding: 32px 24px;
     }
 }

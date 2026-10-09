@@ -1,335 +1,361 @@
 /* ================================
-   VEST SHOP — Y2K ONBOARDING
-   PALETA 1
-   #281D21
-   #700F16
-   #777279
-   #AEB0BF
-   #D2DDEF
+VEST SHOP — ONBOARDING
+Estilo editorial minimalista
+Preto, branco e cinza
 ================================ */
 
+/* RESET */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+:root {
+--preto: #171717;
+--cinza-escuro: #555555;
+--cinza: #888888;
+--cinza-claro: #e8e8e5;
+--fundo: #f5f5f3;
+--branco: #ffffff;
 }
 
 body {
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+min-height: 100vh;
+padding: 30px;
 
-    background:
-        radial-gradient(circle at 20% 20%, #d2ddef 0%, transparent 25%),
-        radial-gradient(circle at 80% 80%, #700f16 0%, transparent 30%),
-        linear-gradient(135deg, #281d21, #777279, #281d21);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
 
-    overflow: hidden;
+font-family: Arial, Helvetica, sans-serif;
+background: var(--fundo);
+color: var(--preto);
+
+
 }
-
-/* brilho decorativo */
-body::before {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-
-    background: radial-gradient(
-        circle,
-        rgba(210, 221, 239, 0.35),
-        transparent 70%
-    );
-
-    top: -180px;
-    left: -150px;
-
-    filter: blur(10px);
-    pointer-events: none;
-}
-
-/* outro brilho */
-body::after {
-    content: "";
-    position: fixed;
-    width: 450px;
-    height: 450px;
-
-    background: radial-gradient(
-        circle,
-        rgba(112, 15, 22, 0.4),
-        transparent 70%
-    );
-
-    bottom: -200px;
-    right: -150px;
-
-    filter: blur(15px);
-    pointer-events: none;
-}
-
 
 /* ================================
-   CONTAINER
+CONTAINER PRINCIPAL
 ================================ */
 
 .onboarding {
-    width: min(90%, 620px);
-    position: relative;
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+
+width: min(100%, 1000px);
+min-height: 620px;
+
+background: var(--branco);
+border: 1px solid var(--cinza-claro);
+
+box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+
+
 }
 
+/* ================================
+FOTO EDITORIAL
+================================ */
+
+.onboarding-image {
+position: relative;
+min-height: 620px;
+
+
+background-color: #292929;
+
+background-image:
+    linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65),
+        transparent 55%
+    ),
+    url("../imagens/modelo-onboarding-v2.jpg");
+
+background-position: center;
+background-size: cover;
+
+
+}
+
+/* Texto sobre a foto */
+
+.image-caption {
+position: absolute;
+left: 32px;
+right: 24px;
+bottom: 32px;
+
+
+color: var(--branco);
+
+
+}
+
+.image-caption span {
+display: block;
+
+
+font-family: Georgia, "Times New Roman", serif;
+font-size: 27px;
+letter-spacing: 4px;
+
+}
+
+.image-caption p {
+margin-top: 12px;
+
+
+font-size: 10px;
+letter-spacing: 2px;
+line-height: 1.7;
+
+
+}
 
 /* ================================
-   CARTÃO PRINCIPAL
+ÁREA DO CONTEÚDO
+================================ */
+
+.onboarding-content {
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+min-width: 0;
+padding: 48px;
+background: var(--branco);
+
+
+}
+
+/* ================================
+ETAPAS
 ================================ */
 
 .etapa {
-    position: relative;
-
-    padding: 55px 50px;
-
-    border-radius: 28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(210, 221, 239, 0.95),
-            rgba(174, 176, 191, 0.92) 45%,
-            rgba(119, 114, 121, 0.95)
-        );
-
-    border: 2px solid rgba(210, 221, 239, 0.8);
-
-    box-shadow:
-        inset 0 2px 3px rgba(255, 255, 255, 0.9),
-        inset 0 -5px 10px rgba(40, 29, 33, 0.3),
-        0 15px 25px rgba(40, 29, 33, 0.45),
-        0 30px 60px rgba(40, 29, 33, 0.35);
-
-    text-align: center;
-
-    overflow: hidden;
-
-    animation: entrada 0.6s ease;
+width: 100%;
+animation: aparecer 0.35s ease;
 }
 
+.brand {
+display: inline-block;
+margin-bottom: 48px;
 
-/* brilho cromado passando pelo cartão */
 
-.etapa::before {
-    content: "";
+font-family: Georgia, "Times New Roman", serif;
+font-size: 17px;
+font-weight: bold;
+letter-spacing: 3px;
 
-    position: absolute;
 
-    top: -100%;
-    left: -60%;
-
-    width: 70%;
-    height: 300%;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.45),
-        transparent
-    );
-
-    transform: rotate(25deg);
-
-    animation: brilho 5s infinite;
 }
 
+/* Pequeno texto superior */
 
-/* ================================
-   LOGO
-================================ */
+.etapa .eyebrow {
+margin-bottom: 14px;
 
-.etapa span {
-    position: relative;
-    z-index: 2;
 
-    display: inline-block;
+color: var(--cinza);
+font-size: 10px;
+font-weight: bold;
+letter-spacing: 2px;
+line-height: 1.5;
+text-transform: uppercase;
 
-    padding: 8px 20px;
 
-    margin-bottom: 35px;
-
-    border-radius: 20px;
-
-    color: #d2ddef;
-
-    background: linear-gradient(
-        145deg,
-        #700f16,
-        #281d21
-    );
-
-    border: 1px solid rgba(210, 221, 239, 0.7);
-
-    box-shadow:
-        inset 0 1px 2px rgba(255,255,255,0.4),
-        0 5px 10px rgba(40, 29, 33, 0.4);
-
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 4px;
 }
 
+/* Contador das etapas */
 
-/* ================================
-   TEXTOS
-================================ */
+.etapa .contador {
+margin-bottom: 20px;
 
-.etapa p {
-    position: relative;
-    z-index: 2;
 
-    color: #281d21;
+color: var(--preto);
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 2px;
 
-    font-size: 16px;
-    line-height: 1.7;
 
-    margin-bottom: 28px;
 }
+
+.contador span {
+color: var(--cinza);
+font-size: 12px;
+font-weight: normal;
+letter-spacing: 1px;
+}
+
+/* Títulos */
 
 .etapa h1 {
-    position: relative;
-    z-index: 2;
+margin-bottom: 20px;
 
-    color: #281d21;
+color: var(--preto);
+font-family: Georgia, "Times New Roman", serif;
+font-size: clamp(30px, 3.5vw, 40px);
+font-weight: normal;
+line-height: 1.15;
+letter-spacing: -1px;
 
-    font-size: clamp(28px, 5vw, 42px);
 
-    line-height: 1.1;
-
-    margin-bottom: 20px;
-
-    text-shadow:
-        1px 1px 0 #d2ddef,
-        2px 2px 0 rgba(119, 114, 121, 0.7),
-        4px 4px 8px rgba(40, 29, 33, 0.3);
 }
 
+/* Descrições */
+
+.etapa > p:not(.contador):not(.eyebrow) {
+margin-bottom: 32px;
+
+
+color: var(--cinza-escuro);
+font-size: 14px;
+line-height: 1.9;
+
+
+}
 
 /* ================================
-   BOTÕES
+BOTÕES
 ================================ */
 
 .etapa button {
-    position: relative;
-    z-index: 2;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 24px;
 
-    margin-top: 5px;
 
-    padding: 14px 40px;
+width: 100%;
+min-height: 52px;
+padding: 15px 20px;
 
-    border: 2px solid #d2ddef;
+border: 1px solid var(--preto);
+border-radius: 0;
 
-    border-radius: 30px;
+background: var(--preto);
+color: var(--branco);
 
-    background:
-        linear-gradient(
-            145deg,
-            #700f16,
-            #281d21
-        );
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 1px;
 
-    color: #d2ddef;
+cursor: pointer;
 
-    font-size: 16px;
-    font-weight: bold;
+transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 
-    letter-spacing: 1px;
 
-    cursor: pointer;
+}
 
-    box-shadow:
-        inset 0 2px 2px rgba(255,255,255,0.35),
-        inset 0 -4px 6px rgba(0,0,0,0.35),
-        0 7px 0 #281d21,
-        0 12px 20px rgba(40, 29, 33, 0.35);
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+.etapa button span {
+font-size: 18px;
+font-weight: normal;
+transition: transform 0.2s ease;
 }
 
 .etapa button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        inset 0 2px 2px rgba(255,255,255,0.45),
-        inset 0 -4px 6px rgba(0,0,0,0.35),
-        0 10px 0 #281d21,
-        0 18px 25px rgba(40, 29, 33, 0.4);
+background: var(--branco);
+color: var(--preto);
 }
 
-.etapa button:active {
-    transform: translateY(4px);
-
-    box-shadow:
-        inset 0 2px 3px rgba(0,0,0,0.4),
-        0 3px 0 #281d21;
+.etapa button:hover span {
+transform: translateX(4px);
 }
 
+.etapa button:focus-visible {
+outline: 2px solid var(--preto);
+outline-offset: 4px;
+}
 
 /* ================================
-   ANIMAÇÕES
+ANIMAÇÃO
 ================================ */
 
-@keyframes entrada {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+@keyframes aparecer {
+from {
+opacity: 0;
+transform: translateY(10px);
 }
 
-@keyframes brilho {
-    0% {
-        left: -70%;
-    }
 
-    40% {
-        left: 130%;
-    }
-
-    100% {
-        left: 130%;
-    }
+to {
+    opacity: 1;
+    transform: translateY(0);
 }
 
+}
 
 /* ================================
-   RESPONSIVO
+RESPONSIVIDADE
 ================================ */
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
+body {
+padding: 16px;
+align-items: flex-start;
+}
 
-    .onboarding {
-        width: 92%;
-    }
 
-    .etapa {
-        padding: 40px 25px;
-        border-radius: 22px;
-    }
+.onboarding {
+    grid-template-columns: 1fr;
+    width: 100%;
+    min-height: auto;
+}
 
-    .etapa h1 {
-        font-size: 30px;
-    }
+.onboarding-image {
+    min-height: 230px;
+    background-position: center 35%;
+}
 
-    .etapa p {
-        font-size: 15px;
-    }
+.image-caption {
+    left: 22px;
+    right: 20px;
+    bottom: 20px;
+}
 
-    .etapa button {
-        width: 100%;
-    }
+.image-caption span {
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+.image-caption p {
+    font-size: 9px;
+}
+
+.onboarding-content {
+    padding: 32px 24px 36px;
+}
+
+.brand {
+    margin-bottom: 32px;
+}
+
+.etapa h1 {
+    font-size: 32px;
+}
+
+.etapa > p:not(.contador):not(.eyebrow) {
+    font-size: 14px;
+}
+
+}
+
+/* Acessibilidade: respeita a preferência por menos animação */
+
+@media (prefers-reduced-motion: reduce) {
+.etapa,
+.etapa button,
+.etapa button span {
+animation: none;
+transition: none;
+}
 }
