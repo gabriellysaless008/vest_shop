@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Entrar | Vest Shop</title>
-
     <link rel="stylesheet" href="../css/login.css">
 </head>
-
 <body>
-
     <main class="container">
-
         <!-- LADO DA FOTO -->
         <aside class="login-image">
             <div class="image-caption">
@@ -24,71 +18,37 @@
 
         <!-- LADO DO LOGIN -->
         <section class="login-card">
-
             <div class="brand">
                 <span>VEST SHOP</span>
             </div>
 
             <header class="header">
                 <h1>Bem-vindo de volta!</h1>
-                <p>
-                    Entre na sua conta para continuar
-                    utilizando a plataforma.
-                </p>
+                <p>Entre na sua conta para continuar utilizando a plataforma.</p>
             </header>
 
             <!-- FORMULÁRIO -->
             <form id="form">
-
                 <div class="form-group">
                     <label for="email">E-mail</label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="seuemail@email.com"
-                        autocomplete="email"
-                        required
-                    >
+                    <input type="email" id="email" name="email" placeholder="seuemail@email.com" autocomplete="email" required>
                 </div>
 
                 <div class="form-group">
-
                     <div class="password-label">
                         <label for="senha">Senha</label>
                         <a href="#">Esqueci minha senha</a>
                     </div>
-
-                    <input
-                        type="password"
-                        id="senha"
-                        name="senha"
-                        placeholder="Digite sua senha"
-                        autocomplete="current-password"
-                        required
-                    >
-
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
                 </div>
 
                 <!-- MENSAGEM DE ERRO OU SUCESSO -->
-                <div
-                    id="message"
-                    class="message"
-                    role="status"
-                    aria-live="polite"
-                ></div>
+                <div id="message" class="message" role="status" aria-live="polite"></div>
 
                 <!-- BOTÃO ENTRAR -->
-                <button
-                    type="submit"
-                    id="botao_login"
-                    class="primary-button"
-                    onclick="login(event)"
-                >
+                <button type="submit" id="botao_login" class="primary-button" onclick="login(event)">
                     Entrar
                 </button>
-
             </form>
 
             <!-- LINK PARA CADASTRO -->
@@ -96,14 +56,11 @@
                 <span>Ainda não possui uma conta?</span>
                 <a href="cadastro.html">Criar conta</a>
             </div>
-
         </section>
-
     </main>
 
     <!-- BIBLIOTECAS E JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/login.js"></script>
-
 </body>
 </html>
