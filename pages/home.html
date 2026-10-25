@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vest Shop</title>
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/menu.css">
 </head>
 <body>
     <!-- ================= HEADER ================= -->
@@ -13,8 +14,17 @@
         <nav class="nav">
             <a href="#inicio">Início</a>
             <a href="#colecao">Coleção</a>
-            <a href="login.html" class="nav-login">Entrar</a>
-        </nav>
+        <div class="account-menu" id="account-menu">
+            <a href="login.html" class="nav-login" id="account-link">Entrar</a>
+
+        <div class="account-dropdown" id="account-dropdown" hidden>
+            <span id="account-label">Minha conta</span>
+            <a href="#" class="account-option">Meus dados</a>
+            <a href="#" class="account-option">Minhas preferências</a>
+            <button type="button" id="logout-button">Sair</button>
+        </div>
+    </div>
+</nav>
     </header>
 
     <!-- ================= HERO ================= -->
@@ -157,5 +167,7 @@
         <span>VEST SHOP</span>
         <span>Plataforma de comércio de vestuário</span>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/pages/js/home.js" defer></script>
 </body>
 </html>
