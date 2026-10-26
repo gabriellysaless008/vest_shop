@@ -8,14 +8,15 @@ const etapas = [
 ];
 
 function mostrarEtapa(numero) {
-
     etapas.forEach((etapa) => {
         etapa.style.display = "none";
         etapa.setAttribute("aria-hidden", "true");
+        etapa.setAttribute("inert", "");
     });
 
     etapas[numero].style.display = "block";
     etapas[numero].setAttribute("aria-hidden", "false");
+    etapas[numero].removeAttribute("inert");
 
     etapaAtual = numero;
 
