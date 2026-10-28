@@ -7,8 +7,6 @@ function pegarDados() {
         senha: senha
     };
 
-    console.log(usuario);
-
     return usuario;
 }
 
@@ -23,13 +21,10 @@ async function login(event) {
 
         const usuario = pegarDados();
 
-        console.log("Enviando para o servidor:");
-        console.log(usuario);
+        console.log("Enviando para o servidor");
 
-        const response = await axios.post(
-            "http://127.0.0.1:3000/login",
-            usuario
-        );
+        const response = await axios.post("http://localhost:3000/login", usuario ,{ withCredentials: true });
+
 
         console.log("Resposta do servidor:");
         console.log(response.data);
@@ -39,33 +34,22 @@ async function login(event) {
             const usuarioLogado = response.data.usuario;
 
             // Guarda o ID do usuário para o onboarding
-            localStorage.setItem(
-                "id_usuario",
-                usuarioLogado.id_usuario
-            );
+            localStorage.setItem("id_usuario", usuarioLogado.id_usuario);
 
             // Verifica o status vindo do MySQL
-            const onboardingConcluido =
-                usuarioLogado.onboarding_concluido == 1;
+            const onboardingConcluido = usuarioLogado.onboarding_concluido == 1;
 
-            console.log(
-                "Onboarding concluído:",
-                onboardingConcluido
-            );
+            console.log("Onboarding concluído:", onboardingConcluido);
 
             if (onboardingConcluido) {
 
-                console.log(
-                    "Onboarding já concluído. Indo para a Home."
-                );
+                console.log("Onboarding já concluído. Indo para a Home.");
 
                 window.location.href = "home.html";
 
             } else {
 
-                console.log(
-                    "Onboarding ainda não concluído. Indo para o onboarding."
-                );
+                console.log("Onboarding ainda não concluído. Indo para o onboarding.");
 
                 window.location.href = "onboarding.html";
             }
@@ -74,22 +58,13 @@ async function login(event) {
     } catch (error) {
 
         console.error("ERRO COMPLETO:", error);
-        console.error(
-            "Resposta do servidor:",
-            error.response
-        );
-        console.error(
-            "Status:",
-            error.response?.status
-        );
-        console.error(
-            "Dados do erro:",
-            error.response?.data
-        );
 
-        alert(
-            error.response?.data?.erro ||
-            "Erro ao realizar login."
-        );
+        console.error("Resposta do servidor:", error.response);
+
+        console.error("Status:", error.response?.status);
+
+        console.error("Dados do erro:", error.response?.data);
+
+        alert(error.response?.data?.erro || "Erro ao realizar login.");
     }
 }

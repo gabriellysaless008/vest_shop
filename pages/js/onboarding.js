@@ -61,9 +61,8 @@ async function finalizarOnboarding() {
 
     try {
 
-        const response = await axios.put(
-            `http://127.0.0.1:3000/usuario/${idUsuario}/onboarding`
-        );
+        const response = await axios.put(`http://127.0.0.1:3000/usuario/${idUsuario}/onboarding`,{},{ withCredentials: true });
+
 
         console.log("Resposta do servidor:");
         console.log(response.data);
