@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/produtos.css">
 </head>
+
 <body>
     <!-- ================= HEADER ================= -->
     <header class="header">
@@ -92,14 +94,12 @@
 
                 <div class="campo">
                     <label for="preco_base_brl">Preço em reais (R$) *</label>
-                    <input type="number" id="preco_base_brl" name="preco_base_brl"
-                        min="0" step="0.01" required>
+                    <input type="number" id="preco_base_brl" name="preco_base_brl" min="0" step="0.01" required>
                 </div>
 
                 <div class="campo">
                     <label for="quantidade_estoque">Quantidade em estoque *</label>
-                    <input type="number" id="quantidade_estoque"
-                        name="quantidade_estoque" min="0" step="1" required>
+                    <input type="number" id="quantidade_estoque" name="quantidade_estoque" min="0" step="1" required>
                 </div>
 
                 <div class="campo">
@@ -132,10 +132,9 @@
                 <span class="collection-number">02 — 02</span>
             </div>
 
-            <p>
-                Os produtos cadastrados serão exibidos nesta área.
-                A listagem será conectada ao banco na próxima etapa.
-            </p>
+            <div id="lista-produtos" aria-live="polite">
+                <p>Carregando produtos...</p>
+            </div>
         </section>
 
     </main>
@@ -147,7 +146,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../pages/js/produtos.js" defer></script>
+    <script src="/pages/js/produtos.js" defer></script>
 
 </body>
+
 </html>

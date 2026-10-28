@@ -34,7 +34,7 @@ async function login(event) {
             const usuarioLogado = response.data.usuario;
 
             // Guarda o ID do usuário para o onboarding
-            localStorage.setItem("id_usuario", usuarioLogado.id_usuario);
+            localStorage.setItem("id_usuario", busuarioLogado.id_usuario);
 
             // Verifica o status vindo do MySQL
             const onboardingConcluido = usuarioLogado.onboarding_concluido == 1;
@@ -63,7 +63,8 @@ async function login(event) {
 
         console.error("Status:", error.response?.status);
 
-        console.error("Dados do erro:", error.response?.data);
+        console.error("Dados do erro:", error.response?.data
+        );
 
         alert(error.response?.data?.erro || "Erro ao realizar login.");
     }

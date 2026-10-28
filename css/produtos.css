@@ -409,3 +409,51 @@ textarea:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
+
+
+/* Ações dos produtos no inventário */
+.produto-item {
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #d8d2c8;
+    border-radius: 8px;
+}
+
+.acoes-produto {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.acoes-produto button {
+    padding: 10px 18px;
+    border: 1px solid #222;
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+    transition: 0.2s ease;
+}
+
+.acoes-produto button:first-child {
+    background-color: #222;
+    color: #fff;
+}
+
+.acoes-produto button:first-child:hover {
+    background-color: #444;
+}
+
+.acoes-produto button:last-child {
+    background-color: transparent;
+    color: #222;
+}
+
+.acoes-produto button:last-child:hover:not(:disabled) {
+    background-color: #eee;
+}
+
+.acoes-produto button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
