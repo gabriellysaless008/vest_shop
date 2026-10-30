@@ -269,7 +269,6 @@ input:focus-visible {
     }
 }
 
-```css
 /* =========================================
    LAYOUT EDITORIAL COM FOTO
 ========================================= */
@@ -369,4 +368,21 @@ body {
     .login-card {
         padding: 32px 24px;
     }
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-link a:hover {
+    color: #171717;
+    text-decoration: underline;
 }
