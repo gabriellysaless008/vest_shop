@@ -2,14 +2,16 @@ function pegarDados() {
     let email = document.getElementById("email").value;
     let senha = document.getElementById("senha").value;
 
+    let perfil = new URLSearchParams(window.location.search).get("perfil");
+
     let usuario = {
         email: email,
-        senha: senha
+        senha: senha,
+        perfil: perfil
     };
 
     return usuario;
 }
-
 
 async function login(event) {
 

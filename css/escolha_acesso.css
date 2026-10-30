@@ -1,0 +1,171 @@
+
+/* VEST SHOP — ESCOLHA DE ACESSO */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f3;
+    color: #171717;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: min(100%, 1000px);
+    min-height: 620px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #e7e7e4;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+}
+
+.login-image {
+    position: relative;
+    min-height: 620px;
+    background-color: #222;
+    background-image:
+        linear-gradient(to top, rgba(0,0,0,0.6), transparent 50%),
+        url("../imagens/modelo-para-as-telas-v2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.image-caption {
+    position: absolute;
+    left: 30px;
+    right: 20px;
+    bottom: 30px;
+    color: #fff;
+}
+
+.image-caption span {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    letter-spacing: 4px;
+}
+
+.image-caption p {
+    margin-top: 12px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.access-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 44px;
+    background: #fff;
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.brand span {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.header h1 {
+    margin-bottom: 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.header p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.access-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.access-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 52px;
+    padding: 15px 18px;
+    border: 1px solid #dcdcd8;
+    background: #fff;
+    color: #171717;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.access-button:hover {
+    background: #171717;
+    color: #fff;
+    border-color: #171717;
+}
+
+.arrow {
+    font-size: 18px;
+}
+
+.register-link {
+    margin-top: 28px;
+    color: #777;
+    font-size: 13px;
+    text-align: center;
+}
+
+.register-link a {
+    margin-left: 5px;
+    color: #171717;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 3px solid #555;
+    outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .login-image {
+        min-height: 220px;
+    }
+
+    .access-card {
+        padding: 32px 24px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+}
