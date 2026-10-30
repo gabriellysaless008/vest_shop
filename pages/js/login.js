@@ -37,6 +37,7 @@ async function login(event) {
 
             // Guarda o ID do usuário para o onboarding
             localStorage.setItem("id_usuario", usuarioLogado.id_usuario);
+            localStorage.setItem("tipo_perfil", response.data.usuario.tipo_perfil);
 
             // Verifica o status vindo do MySQL
             const onboardingConcluido = usuarioLogado.onboarding_concluido == 1;

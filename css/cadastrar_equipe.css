@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f3f0;
+    color: #222;
+    min-height: 100vh;
+}
+
+.pagina-equipe {
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.cabecalho-equipe {
+    margin-bottom: 35px;
+}
+
+.cabecalho-equipe span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #777;
+}
+
+.cabecalho-equipe h1 {
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+.cabecalho-equipe p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.formulario-equipe {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.campo {
+    margin-bottom: 22px;
+}
+
+.campo label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: white;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #222;
+}
+
+.botao-cadastrar {
+    width: 100%;
+    padding: 16px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botao-cadastrar:hover {
+    background-color: #444;
+}
+
+.mensagem {
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 5px;
+    display: none;
+    line-height: 1.5;
+}
+
+.mensagem.sucesso {
+    display: block;
+    background-color: #e3f4e8;
+    color: #216b37;
+}
+
+.mensagem.erro {
+    display: block;
+    background-color: #fbe5e5;
+    color: #a52a2a;
+}
+
+.voltar {
+    display: inline-block;
+    margin-top: 25px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .pagina-equipe {
+        margin: 25px auto;
+    }
+
+    .formulario-equipe {
+        padding: 25px;
+    }
+
+    .cabecalho-equipe h1 {
+        font-size: 28px;
+    }
+}
