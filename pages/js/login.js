@@ -48,7 +48,7 @@ async function login(event) {
 
                 console.log("Onboarding já concluído. Indo para a Home.");
 
-                window.location.href = "home.html";
+                window.location.href = "index.html";
 
             } else {
 

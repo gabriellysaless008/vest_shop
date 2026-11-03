@@ -85,10 +85,7 @@ async function cadastrar(event) {
             usuario.participa_programa_fidelidade
         };
 
-        const response = await axios.post(
-            "http://127.0.0.1:3000/cadastro",
-            dadosCadastro
-        );
+        const response = await axios.post("http://127.0.0.1:3000/cadastro", dadosCadastro);
 
         console.log("Resposta do servidor:", response.data);
 
